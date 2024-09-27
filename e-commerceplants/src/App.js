@@ -1,22 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Plan from "./components/Plan.jsx";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Our Subscription Plans</h1>
+        <Plan
+          name="Basic Plan"
+          desc="A basic plan with essential features."
+          price="9.99"
+        />
+        <Plan
+          name="Pro Plan"
+          desc="A professional plan with additional benefits."
+          price="19.99"
+        />
+        <Plan
+          name="Enterprise Plan"
+          desc="An enterprise plan for large-scale businesses."
+          price="29.99"
+        />
+        <Plan
+          name="Free Plan"
+          desc="A free plan for all the users that need only basic features."
+          price="0.00"
+        />
       </header>
     </div>
   );
