@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Plan from "./components/Plan.jsx";
+import Counter from "./components/Counter.jsx";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           desc="A free plan for all the users that need only basic features."
           price="0.00"
         />
+        <Counter plans={5} />
       </header>
     </div>
   );
