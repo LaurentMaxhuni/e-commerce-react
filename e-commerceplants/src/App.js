@@ -29,6 +29,8 @@ function App() {
           price="0.00"
         />
         <Counter plans={5} />
+
+        {/* Hulumto për useEffect() */}
       </header>
     </div>
   );
