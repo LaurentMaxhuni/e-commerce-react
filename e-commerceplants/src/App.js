@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Plan from "./components/Plan.jsx";
 import Counter from "./components/Counter.jsx";
 import PlanSelector from "./components/PlanSelector.jsx";
+import Plant from "./components/Plant.jsx";
 
 function App() {
   return (
+
     <div className="App">
       <header className="App-header">
         <h1>Our Subscription Plans</h1>
@@ -32,6 +34,8 @@ function App() {
         <PlanSelector />
 
         <Counter plans={5} />
+        
+        <Plant plantNumber={3} />
       </header>
     </div>
   );
