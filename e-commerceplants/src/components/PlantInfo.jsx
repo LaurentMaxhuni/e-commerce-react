@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-function PlantInfo() {
+function PlantInfo(props) {
+
+    useEffect(() => {
+        console.log(`Component ${props.id} mounted`);
+    }, []);
 
     return (
         <div>
             <h1>Plant Info</h1>
-            <p>Green Plant</p>
-            <p>Price: 10$</p>
+            <h2>Plant Name: {props.name}</h2>
+            <p>Color: {props.color % 2 === 0 ?  "Red" : "Green"}</p>
+            <p>Price: {props.price}$</p>
         </div>
     );
 }

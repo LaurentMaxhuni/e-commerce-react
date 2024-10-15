@@ -35,7 +35,7 @@ function App() {
 
         <Counter plans={5} />
         
-        <Plant plantNumber={3} />
+        <Plant plantNumber={10} />
       </header>
     </div>
   );
