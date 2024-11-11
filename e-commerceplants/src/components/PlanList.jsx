@@ -1,27 +1,10 @@
 import React from "react";
-
-const plans = [
-  {
-    id: 1,
-    name: "Basic Plan",
-    price: "9.99",
-    desc: "Essential features for personal use.",
-  },
-  {
-    id: 2,
-    name: "Pro Plan",
-    price: "19.99",
-    desc: "Advanced features for professional use.",
-  },
-  {
-    id: 3,
-    name: "Enterprise Plan",
-    price: "29.99",
-    desc: "Comprehesive solutions for businesses.",
-  },
-];
+import usePlanData from "../hooks/usePlanData.jsx";
+import Pill from "./Pill.jsx";
+import MainInfo from "./MainInfo.jsx";
 
 function PlanList() {
+  const plans = usePlanData();
   return (
     <div>
       <h2>Available Plans</h2>
@@ -35,9 +18,16 @@ function PlanList() {
           }}
           key={plan.id}
         >
-          <h3>{plan.name}</h3>
-          <p>{plan.desc}</p>
+          <MainInfo plan={plan} />
           <p>${plan.price}</p>
+          <p>Number of users: {plan.numberOfUsers}</p>
+          <hr />
+          <ul style={{ textAlign: "center", display: "grid", placeItems: "center", listStyleType: "none", padding: 0 }}>
+            <h2 style={{ color: "yellow", fontSize: 50 }}>Features:</h2>
+            {plan.features.map((feature) => (
+              <Pill feature={feature} />
+            ))}
+          </ul>
         </div>
       ))}
     </div>

@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.pill {
+  border-radius: 50px;
+  color: white;
+  margin-block: 10px;
+  padding: 10px;
+  background-color: #47b606;
+}
