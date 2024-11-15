@@ -1,9 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
 import usePlanData from "../hooks/usePlanData.jsx";
 import Pill from "./Pill.jsx";
 import MainInfo from "./MainInfo.jsx";
+import withLogging from "../hocs/withLogging.jsx";
 
-function PlanList() {
+const PlanList = memo(function PlanList() {
   const plans = usePlanData();
   return (
     <div>
@@ -25,13 +26,14 @@ function PlanList() {
           <ul style={{ textAlign: "center", display: "grid", placeItems: "center", listStyleType: "none", padding: 0 }}>
             <h2 style={{ color: "yellow", fontSize: 50 }}>Features:</h2>
             {plan.features.map((feature) => (
-              <Pill feature={feature} />
+              <Pill feature={feature} key={feature} />
             ))}
           </ul>
         </div>
       ))}
     </div>
   );
-}
+})
+PlanList.name = "PlanList";
 
-export default PlanList;
+export default withLogging(PlanList);
